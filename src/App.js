@@ -6,7 +6,7 @@ import person from './assets/images/person.jpeg';
 function App() {
   return (
     <>
-      <h1>Hello Axur</h1> <img src={person} />
+      <h1>Hello Axur</h1> <img src={person} alt="person" />
     </>
   );
 }
