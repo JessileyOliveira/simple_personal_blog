@@ -15,8 +15,7 @@ export default createGlobalStyle`
   }
 
   body{
-    padding: 0px 12px;
-    background: #e71c22;
+    background: #ccc9e7;
     -webkit-font-smoothing: antialiased !important;
   }
 `;
