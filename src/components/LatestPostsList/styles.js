@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  height: 100%;
   width: 200px;
+  min-width: 200px;
   border-right: 1px solid #aaa;
 `;
 
