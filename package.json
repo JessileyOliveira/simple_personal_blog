@@ -5,8 +5,8 @@
   "author": "Jessiley <jessileycdg@hotmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "webpack --mode development",
-    "start": "webpack-dev-server --mode development",
+    "build": "webpack --mode production --config ./webpack.config.js",
+    "start": "webpack-dev-server --mode production --config ./webpack.config.js",
     "test": "jest"
   },
   "jest": {
@@ -46,6 +46,7 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
+    "date-fns": "^2.13.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
