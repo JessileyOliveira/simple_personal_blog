@@ -20,7 +20,7 @@ export const Container = styled.div`
   & > #body {
     word-wrap: break-word;
     font-size: 14px;
-    padding: 4px 0px;
+    padding: 8px 0px;
   }
 `;
 

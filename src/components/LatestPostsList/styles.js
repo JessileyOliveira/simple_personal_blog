@@ -16,12 +16,11 @@ export const Title = styled.h4`
 
 export const List = styled.ul`
   width: 100%;
-  list-style-type: '- ';
-  list-style-position: inside;
+  list-style-type: none;
   padding: 4px 0px;
 
   & li {
-    padding: 4px 4px 4px 8px;
+    padding: 8px 8px 0px 0px;
     font-weight: bold;
     font-size: 14px;
   }

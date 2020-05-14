@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 
-import { Container, ListPostContainer } from './styles';
+import {
+  Container,
+  PostContainer,
+  Filter,
+  SelectContainer,
+  Select,
+} from './styles';
 
 import LatestPostsList from '../../components/LatestPostsList';
 import Post from '../../components/Post';
@@ -53,13 +59,52 @@ function Home() {
       },
     },
   ]);
+
+  const [listAuthors, setListAuthors] = useState([
+    {
+      name: 'Jemma Chadwick',
+      id: 1,
+    },
+    {
+      name: 'Nicholas Jordan',
+      id: 2,
+    },
+    {
+      name: 'Zinnia Rickard',
+      id: 3,
+    },
+    {
+      name: 'Sophie Hawk',
+      id: 4,
+    },
+  ]);
   return (
     <>
       <Container>
         <LatestPostsList />
-        <ListPostContainer>
+        <PostContainer>
+          <Filter>
+            <SelectContainer>
+              <label htmlFor="author">Autor</label>
+              <Select id="author" value="">
+                <option value="">Todos</option>
+                {listAuthors.map((author) => (
+                  <option key={author.id} value={author.id}>
+                    {author.name}
+                  </option>
+                ))}
+              </Select>
+            </SelectContainer>
+            <SelectContainer width={120}>
+              <label htmlFor="order">Ordem</label>
+              <Select id="order" value={1}>
+                <option value="1">Mais recentes</option>
+                <option value="2">Mais antigos</option>
+              </Select>
+            </SelectContainer>
+          </Filter>
           {listPost.length > 0 && listPost.map((post) => <Post post={post} />)}
-        </ListPostContainer>
+        </PostContainer>
       </Container>
     </>
   );
