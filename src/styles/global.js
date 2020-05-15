@@ -33,10 +33,10 @@ export default createGlobalStyle`
     width: 8px;
   }
   ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: #efefef;
   }
   ::-webkit-scrollbar-thumb {
-    background: #888;
+    background: #272727;
   }
   ::-webkit-scrollbar-thumb:hover {
     background: #555;

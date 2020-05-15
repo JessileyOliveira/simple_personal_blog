@@ -1,13 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useSelector } from 'react-redux';
-import {
-  Container,
-  PostContainer,
-  Filter,
-  SelectContainer,
-  Select,
-  Error,
-} from './styles';
+import { Container, Filter, SelectContainer, Select, Error } from './styles';
 
 import Loader from '../Loader';
 import Post from '../Post';

@@ -7,8 +7,8 @@ export const Container = styled.div`
 `;
 
 export const Loading = styled.div`
-  border: ${(props) => `${props.border}px solid #f3f3f3`};
-  border-top: ${(props) => `${props.border}px solid #ccc`};
+  border: ${(props) => `${props.border}px solid #efefef`};
+  border-top: ${(props) => `${props.border}px solid rgba(255, 255, 255, 0.6)`};
   border-radius: 50%;
   width: ${(props) => `${props.width}px`};
   height: ${(props) => `${props.width}px`};

@@ -12,7 +12,7 @@ export const Container = styled.div`
     font-size: 18px;
     font-weight: bold;
     padding-bottom: 4px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #efefef;
     margin-bottom: 4px;
   }
 
@@ -26,11 +26,11 @@ export const Container = styled.div`
 
 export const Details = styled.div`
   margin-top: 4px;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #efefef;
   padding-top: 4px;
   display: flex;
   justify-content: space-between;
-  color: rgba(237, 237, 237, 0.6);
+  color: rgba(237, 237, 237, 0.38);
 
   & > div {
     font-size: 12px;

@@ -4,7 +4,7 @@ export const Container = styled.div`
   height: 100%;
   width: 200px;
   min-width: 200px;
-  border-right: 1px solid #aaa;
+  border-right: 1px solid rgba(255, 255, 255, 0.6);
 
   @media (max-width: 720px) {
     display: none;
@@ -14,7 +14,7 @@ export const Container = styled.div`
 export const Title = styled.h4`
   width: 100%;
   color: #fff;
-  border-bottom: 1px solid #aaa;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
   padding: 4px 0px;
 `;
 
@@ -25,9 +25,9 @@ export const List = styled.ul`
 
   & li {
     padding: 8px 8px 0px 0px;
-    font-weight: bold;
+    font-weight: 600;
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.87);
   }
 
   & li div {
