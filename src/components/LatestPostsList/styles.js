@@ -13,7 +13,7 @@ export const Container = styled.div`
 
 export const Title = styled.h4`
   width: 100%;
-  color: #2a324b;
+  color: #fff;
   border-bottom: 1px solid #aaa;
   padding: 4px 0px;
 `;
@@ -27,6 +27,7 @@ export const List = styled.ul`
     padding: 8px 8px 0px 0px;
     font-weight: bold;
     font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
   }
 
   & li div {
@@ -34,7 +35,7 @@ export const List = styled.ul`
     font-weight: 400;
     font-size: 12px;
     text-align: right;
-    color: #777;
+    color: rgba(255, 255, 255, 0.6);
     padding: 4px 8px 4px 0px;
   }
 `;

@@ -2,7 +2,11 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 100%;
-  padding: 0px 12px;
+  padding-left: 12px;
+
+  @media (max-width: 720px) {
+    padding: 0px;
+  }
 `;
 
 export const Filter = styled.div`
@@ -21,9 +25,8 @@ export const SelectContainer = styled.div`
 
   & label {
     font-size: 12px;
-    color: #222;
+    color: #fff;
     margin-left: 2px;
-    color: #444;
   }
 `;
 
@@ -31,6 +34,8 @@ export const Select = styled.select`
   height: 36px;
   font-size: 14px;
   padding: 4px;
+  background: #1e1e1e;
+  color: #ededed;
 `;
 
 export const Error = styled.div`

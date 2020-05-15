@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  background: #fcfafa;
+  background: #1e1e1e;
   padding: 12px;
   margin-bottom: 12px;
   border-radius: 4px;
-  -webkit-box-shadow: -2px 4px 5px 0px rgba(50, 50, 50, 0.41);
-  -moz-box-shadow: -2px 4px 5px 0px rgba(50, 50, 50, 0.41);
-  box-shadow: -2px 4px 5px 0px rgba(50, 50, 50, 0.41);
+  color: #ededed;
+  line-height: 1.4;
 
   & > #title {
     font-size: 18px;
@@ -21,6 +20,7 @@ export const Container = styled.div`
     word-wrap: break-word;
     font-size: 14px;
     padding: 8px 0px;
+    color: rgba(237, 237, 237, 0.87);
   }
 `;
 
@@ -30,7 +30,7 @@ export const Details = styled.div`
   padding-top: 4px;
   display: flex;
   justify-content: space-between;
-  color: #bbb;
+  color: rgba(237, 237, 237, 0.6);
 
   & > div {
     font-size: 12px;
