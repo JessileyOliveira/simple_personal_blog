@@ -5,6 +5,10 @@ export const Container = styled.div`
   width: 200px;
   min-width: 200px;
   border-right: 1px solid #aaa;
+
+  @media (max-width: 720px) {
+    display: none;
+  }
 `;
 
 export const Title = styled.h4`

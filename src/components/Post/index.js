@@ -9,11 +9,11 @@ import { Container, Details } from './styles';
 function Post(props) {
   const { post } = props;
   return (
-    <Container>
+    <Container data-testid="post">
       <div id="title">{post.title}</div>
       <div id="body">{post.body}</div>
       <Details>
-        <div>{post.metadata.authorId}</div>
+        <div>{post.author}</div>
         <div>
           {formatDistance(new Date(post.metadata.publishedAt), new Date(), {
             addSuffix: true,
@@ -29,6 +29,7 @@ Post.propTypes = {
   post: PropTypes.shape({
     title: PropTypes.string,
     body: PropTypes.string,
+    author: PropTypes.string,
     metadata: PropTypes.shape({
       publishedAt: PropTypes.number,
       authorId: PropTypes.number,

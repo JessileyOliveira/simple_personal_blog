@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 1020px;
+  max-width: 1020px;
   margin: 0 auto;
   padding: 12px;
   display: flex;
@@ -17,14 +17,14 @@ export const Filter = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 12px 0px;
+  padding-bottom: 12px;
 `;
 
 export const SelectContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px 12px;
+  padding-left: 12px;
 
   & label {
     font-size: 12px;
