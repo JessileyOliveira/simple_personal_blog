@@ -144,4 +144,27 @@ describe('Home tests', () => {
       'Sang lose of hour then he left find'
     );
   });
+
+  it('Should show a error message when api error', () => {
+    const errorStore = {
+      post: {
+        data: [],
+        error: true,
+        errorMessage: 'Erro ao consultar postagens!',
+        loading: false,
+      },
+
+      author: {
+        data: [],
+        error: true,
+        errorMessage: 'Erro ao consultar autores!',
+        loading: false,
+      },
+    };
+    useSelector.mockImplementation((cb) => cb(errorStore));
+    const { getByText } = render(<Home />);
+
+    expect(getByText('Erro ao consultar postagens!')).toBeDefined();
+    expect(getByText('Erro ao consultar autores!')).toBeDefined();
+  });
 });

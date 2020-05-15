@@ -6,6 +6,7 @@ import {
   Filter,
   SelectContainer,
   Select,
+  Error,
 } from './styles';
 
 import LatestPostsList from '../../components/LatestPostsList';
@@ -15,11 +16,11 @@ import Post from '../../components/Post';
 
 function Home() {
   const statePost = useSelector((state) => state.post);
-  const listAuthors = useSelector((state) => state.author);
+  const stateAuthors = useSelector((state) => state.author);
   const [filter, setFilter] = useState({ author: '', order: 'new' });
   const posts = useMemo(
     () =>
-      statePost.data.length && listAuthors.data.length
+      statePost.data.length && stateAuthors.data.length
         ? (filter.author !== ''
             ? statePost.data.filter(
                 (post) => post.metadata.authorId === Number(filter.author)
@@ -32,7 +33,7 @@ function Home() {
                 : a.metadata.publishedAt - b.metadata.publishedAt
             )
             .map((post) => {
-              const authorName = listAuthors.data.find(
+              const authorName = stateAuthors.data.find(
                 (author) => author.id === post.metadata.authorId
               ).name;
               return {
@@ -41,7 +42,7 @@ function Home() {
               };
             })
         : [],
-    [statePost, listAuthors, filter]
+    [statePost, stateAuthors, filter]
   );
 
   const dispatch = useDispatch();
@@ -66,7 +67,7 @@ function Home() {
                 }
               >
                 <option value="">Todos</option>
-                {listAuthors.data.map((author) => (
+                {stateAuthors.data.map((author) => (
                   <option key={author.id} value={author.id}>
                     {author.name}
                   </option>
@@ -87,9 +88,13 @@ function Home() {
               </Select>
             </SelectContainer>
           </Filter>
-          {posts.map((post, index) => (
-            <Post key={index.toString()} post={post} />
-          ))}
+          {!stateAuthors.erro &&
+            !statePost.error &&
+            posts.map((post, index) => (
+              <Post key={index.toString()} post={post} />
+            ))}
+          {statePost.error && <Error>{statePost.errorMessage}</Error>}
+          {stateAuthors.error && <Error>{stateAuthors.errorMessage}</Error>}
         </PostContainer>
       </Container>
     </>

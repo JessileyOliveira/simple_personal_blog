@@ -39,3 +39,11 @@ export const Select = styled.select`
   font-size: 14px;
   padding: 4px;
 `;
+
+export const Error = styled.div`
+  width: 100%;
+  color: #ff0000;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+`;
