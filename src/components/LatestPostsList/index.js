@@ -13,21 +13,24 @@ function LatestPostsList() {
       <Title>Últimas Publicações</Title>
       <List>
         {statePost.data &&
-          statePost.data.slice(0, 3).map((post, index) => (
-            <li key={index.toString()}>
-              {post.title}
-              <div>
-                {formatDistance(
-                  new Date(post.metadata.publishedAt),
-                  new Date(),
-                  {
-                    addSuffix: true,
-                    locale: pt,
-                  }
-                )}
-              </div>
-            </li>
-          ))}
+          statePost.data
+            .sort((a, b) => b.metadata.publishedAt - a.metadata.publishedAt)
+            .slice(0, 3)
+            .map((post, index) => (
+              <li key={index.toString()}>
+                {post.title}
+                <div>
+                  {formatDistance(
+                    new Date(post.metadata.publishedAt),
+                    new Date(),
+                    {
+                      addSuffix: true,
+                      locale: pt,
+                    }
+                  )}
+                </div>
+              </li>
+            ))}
       </List>
       {statePost.loading ? (
         <Loader testid="latestListLoader" width={28} border={4} />
