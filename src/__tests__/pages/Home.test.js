@@ -167,4 +167,28 @@ describe('Home tests', () => {
     expect(getByText('Erro ao consultar postagens!')).toBeDefined();
     expect(getByText('Erro ao consultar autores!')).toBeDefined();
   });
+
+  it('Should show loader while api loading', () => {
+    const errorStore = {
+      post: {
+        data: [],
+        error: false,
+        errorMessage: '',
+        loading: true,
+      },
+
+      author: {
+        data: [],
+        error: false,
+        errorMessage: '',
+        loading: true,
+      },
+    };
+    useSelector.mockImplementation((cb) => cb(errorStore));
+    const { getByTestId } = render(<Home />);
+
+    expect(getByTestId('postContainer')).toContainElement(
+      getByTestId('postLoader')
+    );
+  });
 });

@@ -102,4 +102,19 @@ describe('LatestPostList tests', () => {
 
     expect(liLength).toBe(3);
   });
+
+  it('Should show loader while api loading', () => {
+    const errorStore = {
+      post: {
+        data: [],
+        error: false,
+        errorMessage: '',
+        loading: true,
+      },
+    };
+    useSelector.mockImplementation((cb) => cb(errorStore));
+    const { getByTestId } = render(<LatestPostsList />);
+
+    expect(getByTestId('latestListLoader')).toBeDefined();
+  });
 });
