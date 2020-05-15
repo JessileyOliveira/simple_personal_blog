@@ -4,14 +4,16 @@ import { useSelector } from 'react-redux';
 import { formatDistance } from 'date-fns';
 import { Container, List, Title } from './styles';
 
+import Loader from '../Loader';
+
 function LatestPostsList() {
-  const listPost = useSelector((state) => state.post);
+  const statePost = useSelector((state) => state.post);
   return (
     <Container>
       <Title>Últimas Publicações</Title>
       <List>
-        {listPost.data &&
-          listPost.data.slice(0, 3).map((post, index) => (
+        {statePost.data &&
+          statePost.data.slice(0, 3).map((post, index) => (
             <li key={index.toString()}>
               {post.title}
               <div>
@@ -27,6 +29,9 @@ function LatestPostsList() {
             </li>
           ))}
       </List>
+      {statePost.loading ? (
+        <Loader testid="latestListLoader" width={28} border={4} />
+      ) : null}
     </Container>
   );
 }

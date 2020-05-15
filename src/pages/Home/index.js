@@ -10,6 +10,7 @@ import {
 } from './styles';
 
 import LatestPostsList from '../../components/LatestPostsList';
+import Loader from '../../components/Loader';
 import * as postAction from '../../store/Post/actions';
 import * as authorAction from '../../store/Author/actions';
 import Post from '../../components/Post';
@@ -95,6 +96,9 @@ function Home() {
             ))}
           {statePost.error && <Error>{statePost.errorMessage}</Error>}
           {stateAuthors.error && <Error>{stateAuthors.errorMessage}</Error>}
+          {stateAuthors.loading || statePost.loading ? (
+            <Loader testid="postLoader" />
+          ) : null}
         </PostContainer>
       </Container>
     </>
