@@ -34,7 +34,7 @@ export const Select = styled.select`
   height: 36px;
   font-size: 14px;
   padding: 4px;
-  background: #1e1e1e;
+  background: #272727;
   color: #ededed;
 `;
 

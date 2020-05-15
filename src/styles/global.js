@@ -1,13 +1,22 @@
 import { createGlobalStyle } from 'styled-components';
+import Robotottf from '../assets/fonts/Roboto/Roboto-Regular.ttf';
 
 export default createGlobalStyle`
+
+  @font-face {
+    font-family: 'Roboto';
+    src: local('Roboto'), local('Roboto'),
+    url(${Robotottf}) format('trueType');
+    font-weight: 300;
+    font-style: normal;
+  }
 
   *{
     margin: 0;
     padding: 0;
     outline: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Roboto";
   }
 
   html, body, #root{
@@ -15,7 +24,7 @@ export default createGlobalStyle`
   }
 
   body{
-    background: #121212;
+    background: #1e1e1e;
     -webkit-font-smoothing: antialiased !important;
   }
 
