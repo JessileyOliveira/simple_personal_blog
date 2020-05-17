@@ -5,7 +5,7 @@
   "author": "Jessiley <jessileycdg@hotmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "webpack  --config ./webpack.config.js",
+    "build": "webpack --mode production --config ./webpack.config.js",
     "start": "webpack-dev-server --mode development --config ./webpack.config.js",
     "test": "jest"
   },
