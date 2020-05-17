@@ -62,7 +62,7 @@ function Home() {
             onChange={(e) => setFilter({ ...filter, order: e.target.value })}
           >
             <option value="new">Mais recentes</option>
-            <option value="old">Mais antigos</option>
+            <option value="old">Mais antigas</option>
           </Select>
         </SelectContainer>
       </Filter>
