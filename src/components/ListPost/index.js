@@ -1,39 +1,31 @@
 import React, { useState, useMemo } from 'react';
 import { useSelector } from 'react-redux';
+
 import { Container, Filter, SelectContainer, Select, Error } from './styles';
 
 import Loader from '../Loader';
 import Post from '../Post';
+import manipulateData from '../../helper/manipulatePostData';
 
-function Home() {
-  const statePost = useSelector((state) => state.post);
+function ListPost() {
+  const statePost = useSelector((state) => manipulateData(state.post));
   const stateAuthors = useSelector((state) => state.author);
   const [filter, setFilter] = useState({ author: '', order: 'new' });
   const posts = useMemo(
     () =>
-      statePost.data.length && stateAuthors.data.length
+      statePost.data.length
         ? (filter.author !== ''
             ? statePost.data.filter(
                 (post) => post.metadata.authorId === Number(filter.author)
               )
             : statePost.data
+          ).sort((a, b) =>
+            filter.order === 'new'
+              ? b.metadata.publishedAt - a.metadata.publishedAt
+              : a.metadata.publishedAt - b.metadata.publishedAt
           )
-            .sort((a, b) =>
-              filter.order === 'new'
-                ? b.metadata.publishedAt - a.metadata.publishedAt
-                : a.metadata.publishedAt - b.metadata.publishedAt
-            )
-            .map((post) => {
-              const authorName = stateAuthors.data.find(
-                (author) => author.id === post.metadata.authorId
-              ).name;
-              return {
-                ...post,
-                author: authorName,
-              };
-            })
         : [],
-    [statePost, stateAuthors, filter]
+    [statePost, filter]
   );
 
   return (
@@ -78,4 +70,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default ListPost;

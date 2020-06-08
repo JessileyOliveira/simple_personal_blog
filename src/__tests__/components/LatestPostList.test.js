@@ -29,6 +29,26 @@ describe('LatestPostList tests', () => {
           errorMessage: '',
           loading: false,
         },
+        author: {
+          data: [
+            {
+              name: 'Jemma Chadwick',
+              id: 1,
+            },
+            {
+              name: 'Nicholas Jordan',
+              id: 2,
+            },
+            {
+              name: 'Zinnia Rickard',
+              id: 3,
+            },
+            {
+              name: 'Sophie Hawk',
+              id: 4,
+            },
+          ],
+        },
       })
     );
 
@@ -93,6 +113,26 @@ describe('LatestPostList tests', () => {
           errorMessage: '',
           loading: false,
         },
+        author: {
+          data: [
+            {
+              name: 'Jemma Chadwick',
+              id: 1,
+            },
+            {
+              name: 'Nicholas Jordan',
+              id: 2,
+            },
+            {
+              name: 'Zinnia Rickard',
+              id: 3,
+            },
+            {
+              name: 'Sophie Hawk',
+              id: 4,
+            },
+          ],
+        },
       })
     );
 
@@ -106,6 +146,12 @@ describe('LatestPostList tests', () => {
   it('Should show loader while api loading', () => {
     const errorStore = {
       post: {
+        data: [],
+        error: false,
+        errorMessage: '',
+        loading: true,
+      },
+      author: {
         data: [],
         error: false,
         errorMessage: '',

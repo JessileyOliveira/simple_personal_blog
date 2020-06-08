@@ -1,9 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import pt from 'date-fns/locale/pt-BR';
-import { formatDistance } from 'date-fns';
-
 import { Container, Details } from './styles';
 
 function Post(props) {
@@ -14,12 +11,7 @@ function Post(props) {
       <div id="body">{post.body}</div>
       <Details>
         <div>{post.author}</div>
-        <div>
-          {formatDistance(new Date(post.metadata.publishedAt), new Date(), {
-            addSuffix: true,
-            locale: pt,
-          })}
-        </div>
+        <div>{post.formatedPublishedAt}</div>
       </Details>
     </Container>
   );
@@ -34,6 +26,7 @@ Post.propTypes = {
       publishedAt: PropTypes.number,
       authorId: PropTypes.number,
     }),
+    formatedPublishedAt: PropTypes.string,
   }).isRequired,
 };
 
