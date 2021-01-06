@@ -45,7 +45,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.9.6",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "date-fns": "^2.13.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
